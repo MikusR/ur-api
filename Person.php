@@ -2,7 +2,7 @@
 
 class Person
 {
-    private string $entity_type;
+    //private string $entity_type;
     private string $name;
 
     public function __construct(stdClass $data)
@@ -12,6 +12,14 @@ class Person
                 $this->$propertyName = $entry;
             }
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
     }
 
     public function __toString(): string

@@ -31,7 +31,8 @@ class Application
         }
         $result = [];
         foreach ($response->result->records as $record) {
-            $result[] = new Company($record);
+            $owners = $this->searchPerson($record->regcode);
+            $result[] = new Company($record, $owners);
         }
         return $result;
     }
@@ -46,9 +47,19 @@ class Application
         }
         $result = [];
         foreach ($response->result->records as $record) {
-            $result[] = new Company($record);
+            $result[] = new Person($record);
         }
         return $result;
+    }
+
+    public function displayPerson(array $persons): void
+    {
+        if (count($persons) === 0) {
+            return;
+        }
+        foreach ($persons as $person) {
+            echo "Owner: " . $person . PHP_EOL;
+        }
     }
 
     public function displayResults(array $results): void
@@ -58,9 +69,12 @@ class Application
             return;
         }
         echo count($results) . " results found\n";
+        /**
+         * @var Company $result
+         */
         foreach ($results as $result) {
             echo str_repeat('-', 20) . PHP_EOL;
-            echo $result;
+            echo $result->toString();
         }
     }
 }
