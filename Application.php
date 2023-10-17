@@ -36,6 +36,7 @@ class Application
                         break;
                     }
                     $result->toString();
+                    var_dump($result);
                     break;
                 case 3:
                     if (!$this->dbCreated) {
