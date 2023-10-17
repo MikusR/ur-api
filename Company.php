@@ -6,7 +6,7 @@ class Company
     private string $sepa;
     private string $name;
     private string $registered;
-    private string $terminated;
+    private ?string $terminated;
     private string $address;
     private string $type;
     private string $type_text;
@@ -20,6 +20,13 @@ class Company
         }
     }
 
+    /**
+     * @return string
+     */
+    public function getRegcode(): string
+    {
+        return $this->regcode;
+    }
 
     public function __toString()
     {
