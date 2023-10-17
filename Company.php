@@ -80,6 +80,9 @@ class Company
             . "name: {$this->getName()}\n"
             . "address: {$this->getAddress()}\n"
             . "type: {$this->getType()}\n";
+        if (is_null($this->owner)) {
+            return $returnString;
+        }
         if (count($this->owner) === 1) {
             $returnString .= "Owner: {$this->owner[0]->getName()}\n";
         }
