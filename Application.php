@@ -35,8 +35,8 @@ class Application
                         echo "not found\n";
                         break;
                     }
-                    $result->toString();
-                    var_dump($result);
+                    echo $result->toString();
+                    
                     break;
                 case 3:
                     if (!$this->dbCreated) {
