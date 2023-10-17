@@ -5,9 +5,9 @@ class Application
     public function run(): void
     {
         while (true) {
-//            echo "1 search for company by name or registration number\n";
-//            echo "any other key: exit\n";
-//            $choice = (int)readline();
+            echo "1 search for company by name or registration number\n";
+            echo "any other key: exit\n";
+            $choice = (int)readline();
             $choice = 1;
             switch ($choice) {
                 case 1:
@@ -50,16 +50,6 @@ class Application
             $result[] = new Person($record);
         }
         return $result;
-    }
-
-    public function displayPerson(array $persons): void
-    {
-        if (count($persons) === 0) {
-            return;
-        }
-        foreach ($persons as $person) {
-            echo "Owner: " . $person . PHP_EOL;
-        }
     }
 
     public function displayResults(array $results): void
