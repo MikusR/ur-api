@@ -1,0 +1,17 @@
+{
+  "name": "mikus/ur-api",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "MikusR",
+      "email": "mikus.rakis@gmail.com"
+    }
+  ],
+  "require": {
+    "nesbot/carbon": "^2.71"
+  }
+}
