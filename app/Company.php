@@ -1,5 +1,9 @@
 <?php
 
+namespace App;
+
+use stdClass;
+
 class Company
 {
     private string $regcode;

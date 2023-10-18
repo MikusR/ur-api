@@ -1,5 +1,9 @@
 <?php
 
+namespace App;
+
+use stdClass;
+
 class Person
 {
     //private string $entity_type;

@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Application
 {
 
@@ -36,7 +38,7 @@ class Application
                         break;
                     }
                     echo $result->toString();
-                    
+
                     break;
                 case 3:
                     if (!$this->dbCreated) {
