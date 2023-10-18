@@ -18,7 +18,7 @@ class CompanyDb
                 "get it here: https://data.gov.lv/dati/dataset/4de9697f-850b-45ec-8bba-61fa09ce932f/resource/25e80bf3-f107-4ab4-89ef-251b5b9374e9/download/register.csv\n";
             return;
         };
-
+        $i = 1;
         $csvFile = fopen("register.csv", "r");
         $header = fgetcsv($csvFile, 1000, ";");
         while (($data = fgetcsv($csvFile, 1000, ";")) !== false) {
@@ -27,6 +27,10 @@ class CompanyDb
                 $parameters->$value = $data[$key];
             }
             $this->list[$parameters->regcode] = new Company($parameters);
+            $i++;
+            if ($i % 10000 === 0) {
+                echo $i . PHP_EOL;
+            }
         }
     }
 
